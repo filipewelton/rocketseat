@@ -1,6 +1,6 @@
 # Elixir
 
-## Conceitos Abordados No Capítulo
+## Conceitos Abordados No Capítulo 1
 
 - Operadores
 - Aridade

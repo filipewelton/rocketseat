@@ -12,15 +12,15 @@
 - Syntax sugar
 - Pattern matching
 - Pin operator
-- Função anônima
+- Funções públicas, privada
+- Função anônima implícita e explícita
 - MIX
 - Módulo
-- Funções
 - Tail call optimization
 - Testes
 - Case
 - Pipe operator
-- Handler file
+- File
 - Range
 - Stream
 - Alias
@@ -30,3 +30,12 @@
 - Paradigma funcional
 - Task
 
+## Conceitos Abordados No Capítulo 2
+- Struct
+- Factories
+- use, alias e import
+- Agent
+- Facet pattern
+- With statement
+- Operador \\
+- Operador <>

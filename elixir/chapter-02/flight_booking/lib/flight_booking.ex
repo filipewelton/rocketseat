@@ -1,0 +1,2 @@
+defmodule FlightBooking do
+end

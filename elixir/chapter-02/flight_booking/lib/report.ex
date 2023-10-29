@@ -1,6 +1,10 @@
 defmodule FlightBooking.Report do
   alias FlightBooking.Bookings.Agent, as: BookingAgent
 
+  def build(time_range) when is_nil(time_range) do
+    {:error, "Time range is required"}
+  end
+
   def build(time_range) do
     BookingAgent.get_all()
     |> Map.to_list()

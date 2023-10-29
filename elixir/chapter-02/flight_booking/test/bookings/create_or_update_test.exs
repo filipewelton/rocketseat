@@ -23,5 +23,14 @@ defmodule FlightBooking.Bookings.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "When there are invalid parameters" do
+      user_id = nil
+      booking = build(:booking, user_id: user_id)
+      response = CreateOrUpdate.call(booking)
+      expected_response = {:error, "User ID field must not be empty"}
+
+      assert response == expected_response
+    end
   end
 end

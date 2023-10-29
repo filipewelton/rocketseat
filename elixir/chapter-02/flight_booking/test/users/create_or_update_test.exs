@@ -22,5 +22,13 @@ defmodule FlightBooking.Users.CreateOrUpdateTest do
 
       assert response == expected_response
     end
+
+    test "When CPF field is not a string" do
+      user = build(:user, cpf: 123)
+      response = CreateOrUpdate.call(user)
+      expected_response = {:error, "CPF field must be a string"}
+
+      assert response == expected_response
+    end
   end
 end

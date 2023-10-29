@@ -26,3 +26,4 @@ flight_booking-*.tar
 /tmp/
 
 /.vscode
+/.elixir_ls

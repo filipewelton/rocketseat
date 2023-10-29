@@ -13,5 +13,13 @@ defmodule FlightBooking.Bookings.BookingTest do
 
       assert response == expected_response
     end
+
+    test "When user ID field is empty" do
+      booking = build(:booking, user_id: nil)
+      response = Booking.build(booking)
+      expected_response = {:error, "User ID field must not be empty"}
+
+      assert response == expected_response
+    end
   end
 end

@@ -17,8 +17,8 @@ defmodule FlightBooking.Factory do
     %Booking{
       id: Faker.UUID.v4(),
       complete_date: NaiveDateTime.utc_now(),
-      local_origin: [Faker.Address.latitude(), Faker.Address.longitude()],
-      local_destination: [Faker.Address.latitude(), Faker.Address.longitude()],
+      local_origin: Faker.Address.state(),
+      local_destination: Faker.Address.state(),
       user_id: Faker.UUID.v4()
     }
   end

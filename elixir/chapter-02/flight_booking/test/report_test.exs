@@ -13,15 +13,25 @@ defmodule FlightBooking.ReportTest do
     :ok
   end
 
-  describe "build/0" do
+  describe "build/1" do
     test "When there are registered reservations" do
-      BookingAgent.save(build(:booking))
+      {:ok, out_time} = NaiveDateTime.new(~D[2010-01-01], ~T[23:59:59.000])
+
+      BookingAgent.save(build(:booking, complete_date: out_time))
       BookingAgent.save(build(:booking))
       BookingAgent.save(build(:booking))
       BookingAgent.save(build(:booking))
 
-      response = Report.build()
-      expected_response = {:ok, "Report generated with success"}
+      {:ok, date_from} = NaiveDateTime.new(~D[2015-01-01], ~T[23:59:59.000])
+      {:ok, date_to} = NaiveDateTime.new(~D[2025-01-01], ~T[23:59:59.000])
+
+      time_range = %{
+        from: date_from,
+        to: date_to
+      }
+
+      response = Report.build(time_range)
+      expected_response = {:ok, "Report generated successfully"}
 
       assert response == expected_response
     end
